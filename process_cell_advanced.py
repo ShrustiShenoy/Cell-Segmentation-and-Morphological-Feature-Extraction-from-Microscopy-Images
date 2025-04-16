@@ -12,10 +12,10 @@ os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 # === Load Image ===
 def load_image(path):
     full_path = os.path.abspath(path)
-    print(f"🔍 Reading image from: {full_path}")
+    print(f" Reading image from: {full_path}")
     image = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
     if image is None:
-        raise FileNotFoundError(f"❌ Image not found at {full_path}")
+        raise FileNotFoundError(f" Image not found at {full_path}")
     return image
 
 # === Preprocessing ===
@@ -77,10 +77,10 @@ def main():
     output_csv_path = os.path.join(OUTPUT_FOLDER, "cell_features.csv")
     features_df.to_csv(output_csv_path, index=False)
 
-    print(f"✅ Annotated image saved to: {output_img_path}")
-    print(f"📊 Cell features saved to: {output_csv_path}")
-    print(f"🔢 Total cells detected: {len(contours)}")
-    print("📈 Summary Stats:")
+    print(f" Annotated image saved to: {output_img_path}")
+    print(f" Cell features saved to: {output_csv_path}")
+    print(f" Total cells detected: {len(contours)}")
+    print(" Summary Stats:")
     print(features_df.describe())
 
     # Optional Visualization
